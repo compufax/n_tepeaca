@@ -1,6 +1,6 @@
 <?php
 
-if($_POST['cmd']==150){
+if(isset($_POST['cmd']) && $_POST['cmd']==150){
 
 	$body = array(
     'rfc' => $_POST['brfc'],

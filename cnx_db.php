@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-$zona_horaria = file_get_contents('https://pendientes.hgaribay.com/zonahoraria.txt');
+/*$zona_horaria = file_get_contents('https://pendientes.hgaribay.com/zonahoraria.txt');
 date_default_timezone_set ($zona_horaria);
 if (!$MySQL=@mysql_connect('mysql', 'tepeaca', 'bAllenA6##6')) {
    $t=time();
@@ -24,9 +24,9 @@ $mins = abs($mins);
 $hrs = floor($mins/60);
 $mins -= $hrs*60;
 $offset = sprintf('%+d:%02d', $hrs*$sgn, $mins);
-mysql_query("SET time_zone='$offset'");
-/*GLOBAL $mysqli;
-$mysqli = new mysqli('localhost', 'puebla', 'bAllenA6##6', 'puebla');
+mysql_query("SET time_zone='$offset'");*/
+GLOBAL $mysqli;
+$mysqli = new mysqli('localhost', 'tepeaca', 'bAllenA6##6', 'tepeaca');
 
 function mysql_query($query){
    GLOBAL $mysqli;
@@ -59,7 +59,7 @@ function mysql_num_rows($result)
 function mysql_insert_id(){
    GLOBAL $mysqli;
    return $mysqli->insert_id;
-}*/
+}
 
 if (!function_exists("GetSQLValueString")) {
     function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 

@@ -118,7 +118,7 @@ if($_GET['cmd']==101){
 	if($row['tipo_venta']==1){
 		$texto.='USTED POR ESTE TICKS NO PAGO'.chr(10).chr(13).'Y  NO SE PODRA FACTURAR'.chr(10).chr(13).chr(10).chr(13).'SI LE COBRARON FAVOR DE REPORTAR'.chr(10).chr(13).'AL GERENTE DEL CENTRO'.chr(10).chr(13);
 	}
-	$resPlaza = mysql_query("SELECT numero,nombre,bloqueada_sat,domicilioticket FROM plazas WHERE cve='{$row['plaza']}'");
+	$resPlaza = mysql_query("SELECT numero,nombre,bloqueada_sat FROM plazas WHERE cve='{$row['plaza']}'");
 	$rowPlaza = mysql_fetch_array($resPlaza);
 	$resPlaza2 = mysql_query("SELECT rfc FROM datosempresas WHERE plaza='{$row['plaza']}'");
 	$rowPlaza2 = mysql_fetch_array($resPlaza2);

@@ -6,7 +6,7 @@ require_once('globales.php');
 function obtener_informacion($datos){
 	$resultado = array();
 	$res = mysql_query("SELECT a.fecha, a.motivo, a.cargo, a.abono, a.concepto FROM 
-		(SELECT CONCAT(a.fecha, ' ', a.hora) as fecha, CONCAT('Recibo de Salida ', a.cve,', Motivo: ', b.nombre) as motivo, a.monto as cargo, 0 as abono, a.concepto as obs FROM recibos_salida a INNER JOIN motivos b ON b.cve = a.motivo WHERE a.plaza='{$datos['cveplaza']}' AND a.estatus != 'C' AND a.fecha BETWEEN '{$datos['busquedafechaini']}' AND '{$datos['busquedafechafin']}'
+		(SELECT CONCAT(a.fecha, ' ', a.hora) as fecha, CONCAT('Recibo de Salida ', a.cve,', Motivo: ', b.nombre) as motivo, a.monto as cargo, 0 as abono, a.concepto2 as obs FROM recibos_salida a INNER JOIN motivos b ON b.cve = a.motivo WHERE a.plaza='{$datos['cveplaza']}' AND a.estatus != 'C' AND a.fecha BETWEEN '{$datos['busquedafechaini']}' AND '{$datos['busquedafechafin']}'
 		 UNION ALL 
 		 SELECT CONCAT(fecha, ' ', hora) as fecha, CONCAT('Reembolso ', cve) as motivo, 0 as cargo, monto as abono, obs FROM reembolsos WHERE plaza='{$datos['cveplaza']}' AND estatus!='C' AND fecha BETWEEN '{$datos['busquedafechaini']}' AND '{$datos['busquedafechafin']}'
 		) a ORDER BY a.fecha");

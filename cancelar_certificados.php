@@ -3,6 +3,9 @@ error_reporting(E_ERROR | E_PARSE);
 require_once('cnx_db.php');
 require_once('globales.php');
 
+require_once '../vendor/autoload.php';
+use Dompdf\Dompdf;
+
 
 if($_POST['cmd']==33){
 	$resultado = array('mensaje' => 'Se cancelo exitosamente', 'tipo'=>'success');
@@ -18,7 +21,6 @@ if($_POST['cmd']==33){
 require_once('validarloging.php');
 
 if($_POST['cmd']==110){
-		require_once('dompdf/dompdf_config.inc.php');
 			$html='<html><head>
 		  <style type="text/css">
 							top  lado      ladoiz
@@ -28,9 +30,9 @@ if($_POST['cmd']==110){
 
 
 $html.= '<table width="100%" border="0" cellpadding="4" cellspacing="1" class="" id="tabla1" >';
-	$html.= '<tr style="font-size:32px"><td align="center" colspan="11">Puebla</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-	<tr style="font-size:24px">
-			<td align="center" colspan="11" style="font-size:28px">Reporte Cancelados</td>
+	$html.= '<tr style="font-size:20px"><td align="center" colspan="11">Puebla</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+	<tr style="font-size:17px">
+			<td align="center" colspan="11" style="font-size:17px">Reporte Cancelados</td>
 		 </tr>';
 	$html.= '</table>';
 	$html.= '<br><table width="100%" border="0" cellpadding="4" cellspacing="14" class="" id="tabla1" style="font-size:12px">';

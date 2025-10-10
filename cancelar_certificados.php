@@ -3,7 +3,7 @@ error_reporting(E_ERROR | E_PARSE);
 require_once('cnx_db.php');
 require_once('globales.php');
 
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 use Dompdf\Dompdf;
 
 

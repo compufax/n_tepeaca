@@ -2356,7 +2356,7 @@ if($_POST['cmd']==103){
 			}	
 		}
 	}
-	$res = mysql_query("SELECT 1 as forma_pago, SUM(a.copias) as reg, SUM(a.copias*a.precio) as monto FROM venta_copias a WHERE a.plaza={$_POST['plazausuario']} AND a.fecha BETWEEN '{$_POST['fecha_ini']}' AND '{$_POST['fecha_fin']}' AND a.estatus!='C' {$filtro}");
+	$res = mysql_query("SELECT 1 as forma_pago, SUM(a.cant) as reg, SUM(a.copias*a.precio) as monto FROM venta_copias a WHERE a.plaza={$_POST['plazausuario']} AND a.fecha BETWEEN '{$_POST['fecha_ini']}' AND '{$_POST['fecha_fin']}' AND a.estatus!='C' {$filtro}");
 	while($row = mysql_fetch_assoc($res)){
 		if ($row['forma_pago'] == 1) {
 			$array_resultado['CONTADO'][6][0]+=$row['reg'];

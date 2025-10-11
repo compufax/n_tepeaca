@@ -2448,7 +2448,7 @@ if($_POST['cmd']==103){
 		$gtotales += $totales[1];
 	}
 	echo '<tr><th colspan="3" align="left">GASTOS</th></tr>';
-	$res = mysql_query("SELECT b.cve, b.nombre, COUNT(a.cve) as reg, SUM(a.monto) as monto FROM recibos_salida a INNER JOIN motivos b ON b.cve = a.motivo WHERE a.plaza={$_POST['plazausuario']} AND a.fecha_aplicacion BETWEEN '{$_POST['fecha_ini']}' AND '{$_POST['fecha_fin']}' AND a.estatus!='C' {$filtro} GROUP BY b.cve");
+	$res = mysql_query("SELECT b.cve, b.nombre, COUNT(a.cve) as reg, SUM(a.monto) as monto FROM recibos_salida a INNER JOIN motivos b ON b.cve = a.motivo WHERE a.plaza={$_POST['plazausuario']} AND a.fecha BETWEEN '{$_POST['fecha_ini']}' AND '{$_POST['fecha_fin']}' AND a.estatus!='C' {$filtro} GROUP BY b.cve");
 	$totales=array(0,0);
 	while($row = mysql_fetch_array($res)){
 		echo '<tr>';

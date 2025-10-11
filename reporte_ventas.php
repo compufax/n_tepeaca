@@ -201,7 +201,7 @@ if($_POST['cmd']==0){
 			<div class="col-sm-4">
             	<select name="busquedadepositante" id="busquedadepositante" class="form-control"><option value="">Todos</option>
             	<?php
-            	$res1 = mysql_query("SELECT cve, nombre FROM busquedadepositantes WHERE plaza='{$_POST['cveplaza']}' ORDER BY nombre");
+            	$res1 = mysql_query("SELECT cve, nombre FROM depositantes WHERE plaza='{$_POST['cveplaza']}' ORDER BY nombre");
 				while($row1=mysql_fetch_array($res1)){
 					echo '<option value="'.$row1['cve'].'">'.$row1['nombre'].'</option>';
 				}

@@ -369,7 +369,7 @@ if($_POST['cmd']==0){
 	function precancelarventa(venta){
 		waitingDialog.show();
 		$.ajax({
-			url: 'cobro_engomado.php',
+			url: 'pagos_caja.php',
 			type: "POST",
 			dataType: 'json',
 			data: {

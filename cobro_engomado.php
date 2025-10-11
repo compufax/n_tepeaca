@@ -1243,7 +1243,7 @@ if($_POST['cmd']==10){
 	$row1 = mysql_fetch_assoc(mysql_query("SELECT SUM(a.monto) as importe FROM pagos_caja a{$where1} AND a.estatus!='C' AND a.forma_pago=1"));
 	$efectivo+=$row1['importe'];
 
-	$row1 = mysql_fetch_assoc(mysql_query("SELECT SUM(a.devolucion) as importe FROM devolucion_certificado a{$where} AND a.estatus!='C'"));
+	$row1 = mysql_fetch_assoc(mysql_query("SELECT SUM(a.devolucion) as importe FROM devolucion_certificado a{$where1} AND a.estatus!='C'"));
 	$efectivo-=$row1['importe'];
 	$row1 = mysql_fetch_assoc(mysql_query("SELECT SUM(a.monto) as importe FROM desglose_dinero a{$where1} AND a.estatus!='C'"));
 	$efectivo-=$row1['importe'];

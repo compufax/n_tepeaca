@@ -47,7 +47,7 @@ function obtener_informacion($datos){
 		elseif($datos['mostrar']==2) $select.=" AND a.usado=0";
 	}
 	
-	$select.=" ORDER BY a.cve DESC";
+	echo $select.=" ORDER BY a.cve DESC";
 	$res = mysql_query($select);
 	return $res;
 }

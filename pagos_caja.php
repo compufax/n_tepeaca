@@ -100,7 +100,7 @@ if($_GET['cmd']==101){
 	exit();
 }
 
-if($_POST['ajax']==34){
+if($_POST['cmd']==34){
 	$resultado = array('mensaje' => '', 'error'=>0);
 	$res = mysql_query("SELECT factura, tipo_pago FROM pagos_caja WHERE plaza='{$_POST['cveplaza']}' AND cve='{$_POST['venta']}'");
 	$row = mysql_fetch_array($res);

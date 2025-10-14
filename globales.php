@@ -17,7 +17,7 @@ $array_modulos = array(
 
 $empresa_timbres=29;
 
-$url_impresion = 'https://tepeaca.hgaribay.com';
+$url_impresion = 'https://cvv28tepeaca.com';
 
 function mostrar_fechas($fecha){
 	$datos = explode(' ', $fecha);

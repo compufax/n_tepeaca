@@ -178,7 +178,7 @@ if($_POST['cmd']==1){
 			<div class="card-body">
 				<div class="form-row">
 					<div class="form-group col-sm-9">
-						<label for="nombre">Nombre</label>
+						<label for="nombre">Nombre1</label>
 			            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo utf8_decode($row['nombre']);?>" >
 			        </div>
 			        <div class="form-group col-sm-3">
@@ -272,6 +272,8 @@ if($_POST['cmd']==2){
 		foreach($_POST['camposi'] as $k=>$v){
 			$campos.=",{$k}='{$v}'";
 		}	
+
+		$_POST['nombre'] = utf8_encode($_POST['nombre']);
 		
 		if($_POST['reg']>0){
 			echo "UPDATE clientes SET nombre='".addslashes($_POST['nombre'])."', rfc='{$_POST['rfc']}'{$campos} WHERE cve = '{$_POST['reg']}'";

@@ -976,7 +976,7 @@ if($_POST['cmd']==2){
 		$resC = mysql_query("SELECT * FROM clientes WHERE plaza = '".$plaza."' AND rfc='".$_POST['rfc']."'");
 		if(!$rowC=mysql_fetch_array($resC)){
 			mysql_query("INSERT clientes SET plaza='".$plaza."',fechayhora=NOW(),usuario='-1',
-								rfc='".$_POST['rfc']."',nombre='".addslashes($_POST['nombre'])."',email='".$_POST['email']."',calle='".addslashes($_POST['calle'])."',
+								rfc='".$_POST['rfc']."',nombre='".addslashes(utf8_encode($_POST['nombre']))."',email='".$_POST['email']."',calle='".addslashes($_POST['calle'])."',
 								numexterior='".addslashes($_POST['numexterior'])."',numinterior='".addslashes($_POST['numinterior'])."',colonia='".addslashes($_POST['colonia'])."',
 								municipio='".addslashes($_POST['municipio'])."',estado='".addslashes($_POST['estado'])."',codigopostal='".$_POST['codigopostal']."',
 								usocfdi='G03', regimensat='{$_POST['regimensat']}'");

@@ -179,7 +179,7 @@ if($_POST['cmd']==10){
 			$row['serie'].' '.$row['folio'],
 			mostrar_fechas($row['fecha']).' '.$row['hora'],
 			utf8_encode($row['nomtipopag']),
-			utf8_encode($row['nomcliente']),
+			($row['nomcliente']),
 			utf8_encode($row['rfc']),
 			number_format($row['total'],2),
 			 $row['usuario'],

@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+mb_http_output("ISO-8859-1");
 /*$zona_horaria = file_get_contents('https://pendientes.hgaribay.com/zonahoraria.txt');
 date_default_timezone_set ($zona_horaria);
 if (!$MySQL=@mysql_connect('mysql', 'tepeaca', 'bAllenA6##6')) {

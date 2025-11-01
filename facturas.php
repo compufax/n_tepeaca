@@ -1698,9 +1698,9 @@ if($_POST['cmd']==12){
 				mysql_query("UPDATE cobro_engomado SET factura='{$cvefact}', documento=1, notacredito=0 WHERE plaza='{$_POST['cveplaza']}' AND cve IN (".implode(',',$tickets).")");
 				mysql_query("INSERT INTO venta_engomado_factura (plaza,venta,factura) SELECT {$_POST['cveplaza']},cve,factura FROM cobro_engomado WHERE plaza='{$_POST['cveplaza']}' AND factura='{$cvefact}'");
 			}
-			if($pagos!=''){
+			/*if($pagos!=''){
 				mysql_query("UPDATE pagos_caja SET factura='{$cvefact}' WHERE plaza='{$_POST['cveplaza']}' AND cve IN (".$pagos.")");
-			}
+			}*/
 			require_once("nusoap/nusoap.php");
 			$documento = genera_arreglo_facturacion($_POST['cveplaza'], $cvefact, 'I');
 			$resultadotimbres = validar_timbres($_POST['cveplaza']);

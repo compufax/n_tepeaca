@@ -6,7 +6,7 @@ if(isset($_POST['cmd']) && $_POST['cmd']==150){
     'rfc' => $_POST['brfc'],
     'pdf' => base64_encode(file_get_contents($_FILES['constancia']['tmp_name']))
 	);
-	$url = 'https://api.2ai.io/cfdi/rfc';
+	$url = 'https://api.facturacionweb.net/cfdi/rfc';
 
 	$ch = curl_init($url);
 
@@ -103,7 +103,7 @@ if($_POST['ajax']=='buscarRfc'){
 	if (isset($_POST['idcif'])){
 		$body['idcif'] = $_POST['idcif'];
 	}
-	$url = 'https://api.2ai.io/cfdi/rfc';
+	$url = 'https://api.facturacionweb.net/cfdi/rfc';
 
 	$ch = curl_init($url);
 
@@ -1257,7 +1257,7 @@ if($_POST['cmd']==2){
 							    'rs' => $_POST['nombre'],
 							    'cp' => $_POST['codigopostal']
 								);
-								$url = 'https://api.2ai.io/cfdi/rfc/edit';
+								$url = 'https://api.facturacionweb.net/cfdi/rfc/edit';
 
 								$ch = curl_init($url);
 

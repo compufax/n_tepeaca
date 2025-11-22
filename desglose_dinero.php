@@ -61,7 +61,7 @@ if($_POST['cmd']==0){
 <div class="row justify-content-center">
 	<div class="col-xl-12 col-lg-12 col-md-12">
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Fecha Inicio</label>
+			<label class="col-sm-2 col-form-label">Fecha Inicio*</label>
 			<div class="col-sm-4">
             	<input type="date" class="form-control" id="busquedafechaini" name="busquedafechaini" placeholder="Fecha Inicio" value="<?php echo date('Y-m-d');?>">
         	</div>

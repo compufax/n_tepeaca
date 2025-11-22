@@ -63,11 +63,11 @@ if($_POST['cmd']==0){
 		<div class="form-group row">
 			<label class="col-sm-2 col-form-label">Fecha Inicio</label>
 			<div class="col-sm-4">
-            	<input type="date" class="form-control" id="busquedafechaini" name="busquedafechaini" placeholder="Fecha Inicio">
+            	<input type="date" class="form-control" id="busquedafechaini" name="busquedafechaini" placeholder="Fecha Inicio" value="<?php echo date('Y-m-d');?>">
         	</div>
 			<label class="col-sm-2 col-form-label">Fecha Fin</label>
 			<div class="col-sm-4">
-            	<input type="date" class="form-control" id="busquedafechafin" name="busquedafechafin" placeholder="Fecha Fin">
+            	<input type="date" class="form-control" id="busquedafechafin" name="busquedafechafin" placeholder="Fecha Fin" value="<?php echo date('Y-m-d');?>">
         	</div>
         </div>
 		
